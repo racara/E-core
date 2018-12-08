@@ -14,16 +14,15 @@ import org.openqa.selenium.chrome.ChromeOptions;
 
 public class EcoreTest {
     private WebDriver driver;
-    String baseUrl;
-    EcorePage ecorePage;
-    String nome = "demouser";
-    String senha = "abc123";
-
+    private String baseUrl;
+    private EcorePage ecorePage;
+    private String nome = "demouser";
+    private String senha = "abc123";
     public EcoreTest() {
     }
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp()  {
         System.setProperty("webdriver.chrome.driver", "C:\\Users\\Rafa\\Desktop\\chromedriver_win32\\chromedriver.exe");
         this.driver = new ChromeDriver();
         this.baseUrl = "https://automation-sandbox.herokuapp.com";
@@ -57,7 +56,6 @@ public class EcoreTest {
         this.ecorePage.setSenha("admddd");
         this.ecorePage.clickLogin();
         Assert.assertEquals("Wrong username or password.",ecorePage.getMessageError());
-        //testando o git
 
     }
     @Test
