@@ -12,26 +12,26 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
-public class EcoreTest {
-    private WebDriver driver;
-    private String baseUrl;
-    private EcorePage ecorePage;
-    private String nome = "demouser";
-    private String senha = "abc123";
-    public EcoreTest() {
-    }
+    public class EcoreTest {
+        private WebDriver driver;
+        private String baseUrl;
+        private EcorePage ecorePage;
+        private String nome = "demouser";
+        private String senha = "abc123";
+        public EcoreTest() {
+        }
 
-    @Before
-    public void setUp()  {
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\Rafa\\Desktop\\chromedriver_win32\\chromedriver.exe");
-        this.driver = new ChromeDriver();
-        this.baseUrl = "https://automation-sandbox.herokuapp.com";
-        this.ecorePage = new EcorePage(this.driver);
-        this.driver.manage().window().maximize();
-        this.driver.manage().timeouts().implicitlyWait(30L, TimeUnit.SECONDS);
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("disable-infobars");
-    }
+        @Before
+        public void setUp()  {
+            System.setProperty("webdriver.chrome.driver", "C:\\Users\\Rafa\\Desktop\\chromedriver_win32\\chromedriver.exe");
+            this.driver = new ChromeDriver();
+            this.baseUrl = "https://automation-sandbox.herokuapp.com";
+            this.ecorePage = new EcorePage(this.driver);
+            this.driver.manage().window().maximize();
+            this.driver.manage().timeouts().implicitlyWait(30L, TimeUnit.SECONDS);
+            ChromeOptions options = new ChromeOptions();
+            options.addArguments("disable-infobars");
+        }
 
     @After
     public void tearDown() throws Exception {
